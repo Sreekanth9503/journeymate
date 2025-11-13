@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/journeymate/static/css/main.cb3967bd.css",
+    "main.js": "/journeymate/static/js/main.5918b4bf.js",
+    "static/js/453.5eb29c92.chunk.js": "/journeymate/static/js/453.5eb29c92.chunk.js",
+    "static/media/sea-img.jpg": "/journeymate/static/media/sea-img.701a1d664607898bdc9c.jpg",
+    "static/media/bootstrap-icons.woff?": "/journeymate/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
+    "static/media/bootstrap-icons.woff2?": "/journeymate/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
+    "static/media/trekking.jpeg": "/journeymate/static/media/trekking.27d9ef04d0a11cebab2c.jpeg",
+    "index.html": "/journeymate/index.html",
+    "main.cb3967bd.css.map": "/journeymate/static/css/main.cb3967bd.css.map",
+    "main.5918b4bf.js.map": "/journeymate/static/js/main.5918b4bf.js.map",
+    "453.5eb29c92.chunk.js.map": "/journeymate/static/js/453.5eb29c92.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb3967bd.css",
+    "static/js/main.5918b4bf.js"
+  ]
+}
