@@ -1,38 +1,950 @@
-.App {
+*{
+    box-sizing: border-box;
+}
+
+.navbar {
+  background-color: black !important;
+  color:white !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover underline effect */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* Active link style */
+.navbar-nav .nav-link.active {
+  color: #dc3545 !important;
+  font-weight: 600;
+}
+
+/* Navbar shrink on scroll (optional enhancement) */
+.navbar.scrolled {
+  background-color: #f8f9fa !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggler icon customization */
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* Mobile view */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    text-align: center;
+  }
+}
+/* ===== JourneyMate About Page Styles ===== */
+
+.about-page {
+  background: #f9fbff;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Page title */
+.about-page h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-page p.lead {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Image styling */
+.about-page img {
+  border-radius: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-page img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Section heading */
+.about-page h3 {
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+/* Card-style boxes (Mission, Vision, Values) */
+.about-page .shadow-sm {
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-page .shadow-sm:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styles */
+.about-page i {
+  transition: transform 0.3s ease;
+}
+
+.about-page .shadow-sm:hover i {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* CTA section */
+.about-page .btn-primary {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  border: none;
+}
+
+.about-page .btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-page img {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .about-page .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
+
+
+.slide-bg {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional dark overlay */
+}
+
+.slide-content {
+  height: 100%;
+  color: white; /* White text looks clean on images */
+  padding: 20px;
+}
+
+/* ===== JourneyMate Book Drive Form Styles ===== */
+
+.book-drive-form {
+  background: linear-gradient(180deg, #f9fbff 0%, #eef5ff 100%);
+  border-radius: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.book-drive-form h2 {
+  color: #0d6efd;
+  letter-spacing: 1px;
+}
+
+.book-drive-form p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.book-drive-form form {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.book-drive-form form:hover {
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Input fields */
+.book-drive-form .form-control,
+.book-drive-form .form-select {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-drive-form .form-control:focus,
+.book-drive-form .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.4);
+}
+
+/* Labels */
+.book-drive-form .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Button styling */
+.book-drive-form .btn-primary {
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.book-drive-form .btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .book-drive-form {
+    padding: 2rem 1rem !important;
+  }
+
+  .book-drive-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .book-drive-form form {
+    padding: 2rem 1rem !important;
+  }
+}
+/* ===== JourneyMate Destinations Page Styles ===== */
+
+body {
+  background-color: #f9fbff;
+  font-family: "Poppins", sans-serif;
+}
+
+.destination-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: #fff;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+}
+
+/* Card image styling */
+.destination-card img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Destination content */
+.destination-card .card-body {
+  padding: 20px;
+}
+
+.destination-card h5 {
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.destination-card p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  min-height: 60px;
+}
+
+/* Buttons */
+.destination-card .btn {
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* Primary button */
+.destination-card .btn-primary {
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+}
+
+.destination-card .btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .destination-card img {
+    height: 200px;
+  }
+  
+  .destination-card h5 {
+    font-size: 1.1rem;
+  }
+
+  .destination-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== JourneyMate Footer Styles ===== */
+
+/* ===== JourneyMate Footer Styles (Final Polished Version) ===== */
+
+/* Force override of Bootstrap dark */
+/* ===== Enhanced JourneyMate Footer ===== */
+
+.journey-footer {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0c0c0c 100%);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border-top: 3px solid #0d6efd;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 130%;
+  height: 3px;
+  background: linear-gradient(90deg, #dc3545, #0d6efd, #dc3545);
+  transform: translateX(-50%);
+  animation: lineGlow 4s linear infinite;
+}
+
+@keyframes lineGlow {
+  0% { opacity: 0.4; transform: translateX(-50%) scaleX(0.8); }
+  50% { opacity: 1; transform: translateX(-50%) scaleX(1); }
+  100% { opacity: 0.4; transform: translateX(-50%) scaleX(0.8); }
+}
+
+/* Brand Logo */
+.footer-logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+.glow-text {
+  position: relative;
+}
+
+.glow-text::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #dc3545, #0d6efd);
+  border-radius: 5px;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.8); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+/* Quick Links & Destinations */
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #bfbfbf;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-links a:hover {
+  color: #0d6efd;
+  padding-left: 6px;
+}
+
+/* Newsletter */
+.footer-newsletter {
+  margin-top: 10px;
+}
+
+.footer-newsletter .form-control {
+  border-radius: 25px;
+  border: none;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  width: 65%;
+  max-width: 220px;
+}
+
+.footer-newsletter .btn {
+  border-radius: 25px;
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.footer-newsletter .btn:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.social-icons a {
+  color: #bfbfbf;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.3) rotate(5deg);
+}
+
+.social-icons a:nth-child(1):hover { color: #1877f2; } /* Facebook */
+.social-icons a:nth-child(2):hover { color: #1da1f2; } /* Twitter */
+.social-icons a:nth-child(3):hover { color: #e4405f; } /* Instagram */
+.social-icons a:nth-child(4):hover { color: #ff0000; } /* YouTube */
+.social-icons a:nth-child(5):hover { color: #0a66c2; } /* LinkedIn */
+
+/* Divider */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Copyright */
+footer .text-center p {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .journey-footer {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .footer-logo {
+    font-size: 1.7rem;
+  }
+
+  .social-icons {
+    justify-content: center !important;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-newsletter .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-newsletter .btn {
+    width: 100%;
+  }
+}
+
+
+/* ===== JourneyMate HomeCards Section ===== */
+
+section {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef5ff 100%);
+}
+
+h2 {
+  color: #0d6efd;
+  letter-spacing: 1px;
+}
+
+.text-muted {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+}
+
+/* Image hover zoom */
+.card img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* Card body */
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #0d6efd;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Button styling */
+.card-footer .btn {
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.card-footer .btn-outline-primary {
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+  background-color: transparent;
+}
+
+.card-footer .btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .card img {
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .card img {
+    height: 160px !important;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}
+/* ===== JourneyMate Home Page Styles ===== */
+
+.home-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay effect */
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Hero text content */
+.home-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  color: #fff;
+  max-width: 700px;
+  animation: fadeInUp 1s ease;
+}
+
+.home-hero h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.4;
+}
+
+.home-hero p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+/* Explore Button */
+.home-hero .btn-primary {
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.home-hero .btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Why Choose Section */
+.home-why {
+  background: linear-gradient(180deg, #f9fbff 0%, #eef5ff 100%);
+  padding: 60px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-why h2 {
+  font-weight: 700;
+  color: #0d6efd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-why p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #6c757d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.home-why i {
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.home-why i:hover {
+  transform: scale(1.2);
 }
 
-@keyframes App-logo-spin {
+/* Feature cards */
+.home-why .col-md-4 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.home-why .col-md-4:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+}
+
+/* Animation for hero */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .home-hero p {
+    font-size: 1rem;
+  }
+
+  .home-hero .btn-primary {
+    font-size: 0.9rem;
+    padding: 10px 25px;
+  }
+}
+/* ===== JourneyMate Reviews Section ===== */
+
+.reviews-section {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef5ff 100%);
+  padding: 60px 0;
+}
+
+/* Section title */
+.reviews-section h2 {
+  color: #0d6efd;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.reviews-section p.text-muted {
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+  line-height: 1.8;
+}
+
+/* Review Cards */
+.reviews-section .card {
+  border-radius: 15px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.reviews-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+}
+
+/* Reviewer Info */
+.reviews-section .card-body h5 {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.reviews-section .card-body p.small {
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.reviews-section i.bi-star-fill {
+  color: #ffc107 !important;
+  font-size: 1rem;
+}
+
+.reviews-section i.bi-star {
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+/* Review Text */
+.reviews-section .card-body p.text-muted {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.reviews-section .btn-primary {
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.reviews-section .btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reviews-section .card {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reviews-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .reviews-section p.text-muted {
+    font-size: 0.95rem;
+  }
+}
+/* ===== JourneyMate Services Page Styles ===== */
+
+.services-section {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef5ff 100%);
+  padding: 60px 0;
+}
+
+/* Section Heading */
+.services-section h2 {
+  color: #0d6efd;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.services-section p.text-muted {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Service Cards */
+.services-section .card {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+}
+
+/* Icon Styling */
+.services-section i {
+  transition: transform 0.3s ease;
+}
+
+.services-section .card:hover i {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Card Title */
+.services-section h5 {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Card Text */
+.services-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6c757d;
+}
+
+/* CTA Section */
+.services-section .btn-primary {
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.services-section .btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #0d6efd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-section p.text-muted {
+    font-size: 0.95rem;
+  }
+
+  .services-section .card {
+    padding: 20px;
   }
 }
